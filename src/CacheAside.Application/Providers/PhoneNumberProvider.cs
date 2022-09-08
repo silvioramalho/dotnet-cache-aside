@@ -1,9 +1,26 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CacheAside.Application.Providers
 {
     public static class PhoneNumberProvider
     {
+        private const string CLEAN_PHONENUMBER_PATTERN = "\\s|-|\\(|\\)";
+        private const string GROUP_DDI = "ddi";
+        private const string GROUP_NUMBER = "number";
+        private const string GROUP_ENTIRE_NUMBER = "entireNumber";
+        private const string NATIONAL_PHONENUMBER_PATTERN = @"^(?<ddi>\+?55)?(?<number>\d{10,11})$";
+        private const char PLUS_CHAR = '+';
+        public const string ERROR_INVALID_NUMBER_FORMAT = "this number {0} doesn't meet the minimum requirements for processing";
+
+        public static string Add9Digit(this string phone)
+        {
+            if (phone.Length == 13)
+                return phone;
+
+            return phone.Substring(0, 4) + "9" + phone.Substring(4, 8);
+        }
+
         public static string GetRandom(bool hasNineDigit = true)
         {
             Random rand = new Random();
@@ -49,6 +66,8 @@ namespace CacheAside.Application.Providers
                 rand = new Random();
             return rand.Next(INI_RANGE, END_RANGE).ToString().PadLeft(4,'0');
         }
+
+       
 
     }
 }

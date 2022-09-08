@@ -24,5 +24,14 @@ namespace CacheAside.Tests.Application
             Assert.That(phone, Has.Length.EqualTo(13));
             Assert.Pass(phone);
         }
+
+        [Test]
+        public void PhoneNumberProvider_ShouldAdd9Digit()
+        {
+            var phone = "553188887777";
+            phone = phone.Add9Digit();
+            Assert.That(phone, Is.EqualTo("5531988887777"));
+            Assert.Pass(phone);
+        }
     }
 }
