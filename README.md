@@ -13,3 +13,11 @@ https://citizix.com/how-to-run-cassandra-4-with-docker-and-docker-compose/
 > select * from irispoc.adapterkey ;
 
 > insert into irispoc.adapterkey (key, value) Values ('123456', '{"type":0,"id":"654321111"}');
+
+## Test results
+
+### Release Build
+
+* 100.000 Itens
+
+> Load tests finished in 44.203 ms with 2.272 item/s

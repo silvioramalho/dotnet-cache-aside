@@ -2,6 +2,7 @@
 using CacheAside.Domain.Enums;
 using CacheAside.Domain.Models;
 using CacheAside.Repository;
+using CacheAside.Application.Providers;
 
 namespace CacheAside.Application.Services
 {
@@ -20,13 +21,13 @@ namespace CacheAside.Application.Services
         public async Task<string> GetRelatedKey(string key, ValueTypeEnum type, CancellationToken cancellationToken)
         {
 
-            var adapterKey = await GetCacheAsync(key, cancellationToken);
+            var adapterKey = await GetCacheAsync(key.Add9Digit(), cancellationToken);
             if (adapterKey.Value == null)
             {
-                AdapterKey? dbValue = (await GetDbListAsync(key, cancellationToken)).FirstOrDefault();
+                AdapterKey? dbValue = (await GetDbListAsync(key.Add9Digit(), cancellationToken)).FirstOrDefault();
                 if (dbValue == null)
                 {
-                    dbValue = new AdapterKey(key);
+                    dbValue = new AdapterKey(key.Add9Digit());
                     dbValue.Value = new AdapterValue(type, key);
                     await AddCacheAsync(dbValue, cancellationToken);
                     await AddDbAsync(dbValue, cancellationToken);

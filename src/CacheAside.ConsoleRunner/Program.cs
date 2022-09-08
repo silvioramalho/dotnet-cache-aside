@@ -11,6 +11,7 @@ IConfiguration configuration = host.Services.GetRequiredService<IConfiguration>(
 
 
 var services = new ServiceCollection();
+services.AddSingleton<IConfiguration>(configuration);
 services.AddLogging(configure => configure.AddConsole());
 services.AddApplicationServices(configuration);
 services.AddTransient<ConsoleApp>();
