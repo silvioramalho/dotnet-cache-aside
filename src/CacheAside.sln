@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheAside.Tests", "CacheAside.Tests\CacheAside.Tests.csproj", "{D0BCF3F2-34C4-4031-8410-C9B3B9F25794}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheAside.ConsoleRunner", "CacheAside.ConsoleRunner\CacheAside.ConsoleRunner.csproj", "{AADC21B4-1177-4635-90B9-7969FE79D0AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D0BCF3F2-34C4-4031-8410-C9B3B9F25794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0BCF3F2-34C4-4031-8410-C9B3B9F25794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0BCF3F2-34C4-4031-8410-C9B3B9F25794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AADC21B4-1177-4635-90B9-7969FE79D0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADC21B4-1177-4635-90B9-7969FE79D0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADC21B4-1177-4635-90B9-7969FE79D0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADC21B4-1177-4635-90B9-7969FE79D0AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,4 @@
-using CacheAside.Application;
 using CacheAside.Application.Extensions;
-using CacheAside.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
